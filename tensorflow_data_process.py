@@ -1,9 +1,9 @@
 import os
 import pandas as pd
-#import tensorflow as tf
+import tensorflow as tf
 
-os.makedirs(os.path.join('..', 'data'), exist_ok=True)
-data_file = os.path.join('..', 'data', 'house_tiny.csv')
+os.makedirs(os.path.join('..', 'data/tensorflow'), exist_ok=True)
+data_file = os.path.join('..', 'data/tensorflow', 'house_tiny.csv')
 
 # 写数据
 with open(data_file, 'w') as f:
@@ -31,5 +31,5 @@ inputs = pd.get_dummies(inputs, dummy_na=True)
 print(inputs)
 
 
-#x, y = tf.constant(inputs.values), tf.constant(outputs.values)
-#print(x, y)
+x, y = tf.constant(inputs.values), tf.constant(outputs.values)
+print(x, y)
